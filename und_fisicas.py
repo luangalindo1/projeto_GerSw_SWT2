@@ -79,3 +79,29 @@ def horas_para_minutos(horas):
 def minutos_para_horas(minutos):
     """Conversão de minutos para horas"""
     return minutos / 60
+
+####################### 5. Velocidade #######################
+
+def mps_mph(mps):
+    """Conversão de metros por segundo para milhas por hora"""
+    return mps * 2.23694
+
+def mph_mps(mph):
+    """Conversão de milhas por hora para metros por segundo"""
+    return mph / 2.23694
+
+def kph_mps(kph):
+    """Conversão de quilometros por hora para metros por segundo"""
+    return kph / 3.6
+
+def mps_kph(mps):
+    """Conversão de metros por segundo para quilometros por hora"""
+    return mps * 3.6
+
+def kph_mph(kph):
+    """Conversão de quilometros por hora para milhas por hora"""
+    return kph * 0.621371
+
+def mph_kph(mph):
+    """Conversão de milhas por hora para quilometros por hora"""
+    return mph / 0.621371
