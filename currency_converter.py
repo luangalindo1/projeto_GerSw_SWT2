@@ -3,7 +3,7 @@
 
 import requests
 
-# Chave da API (substitua pela sua chave)
+# Chave da API 
 API_KEY = "affb02eeab392ba6f4a1c281"
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
 
@@ -68,7 +68,7 @@ def converter_moeda(valor, moeda_origem, moeda_destino, taxas):
 # Função que realiza a conversão de moeda com base nas taxas de câmbio fornecidas.
 # Retorna o valor convertido.
 
-def executar_conversor():
+def conversor_moedas():
     """
     Função principal que gerencia o fluxo do programa.
     """
