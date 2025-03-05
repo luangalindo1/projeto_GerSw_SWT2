@@ -4,8 +4,10 @@ FROM python:3.13
 
 WORKDIR /project_scm
 
-COPY . /project_scm/
+COPY ./requirements.txt /project_scm/requirements.txt
 
-RUN pip install requests qrcode
+RUN pip install --no-cache-dir -r /project_scm/requirements.txt
+
+COPY . /project_scm 
 
 CMD ["python", "./conversor.py"]
