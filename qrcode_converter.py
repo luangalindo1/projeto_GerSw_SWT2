@@ -1,4 +1,5 @@
 import qrcode
+import cv2
 
 def generate_qr_image(txt, out_file="my_qrcode.png"):
     """
@@ -21,3 +22,20 @@ def generate_qr_image(txt, out_file="my_qrcode.png"):
     new_img.save(out_file)
 
     print(f"QR Code salvo como {out_file}")
+
+def read_qr_image(file_name):
+    """
+    Lê uma imagem QRCode e retorna o conteúdo dele.
+    file_name (str) -> Arquivo, em image, que contém o QR Code.
+    """
+    new_img = cv2.imread(file_name)
+    detector = cv2.QRCodeDetector()
+    data, _, _ = detector.detectAndDecode(new_img)
+
+    if data:
+        print(f"Conteúdo do QR Code: {data}")
+        return data
+    
+    else:
+        print("Nenhum QR Code detectado.")
+        return None
