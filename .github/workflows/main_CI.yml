@@ -32,7 +32,8 @@ jobs:
     # Passo 4: Rodar os testes
     - name: Run tests
       run: |
-        pytest  # Ou qualquer outro framework de testes
+        pytest -v # Ou qualquer outro framework de testes
+                  # a flag -v é para exibição de resultados mais detalhados
 
     # Passo 5: (Opcional) Verificar estilo de código com flake8
     - name: Lint with flake8
