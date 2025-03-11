@@ -22,3 +22,5 @@ def test_generate_qr_image():
     assert result == file_message
     os.remove(file_name)
 
+def test_read_qr_invalid():
+    assert qrcode_converter.read_qr_image("non_existent_file.png") is None
