@@ -2,9 +2,15 @@
 
 
 import requests
+import os
+from dotenv import load_dotenv
 
-# Chave da API 
-API_KEY = "affb02eeab392ba6f4a1c281"
+load_dotenv()
+
+#para nao deixar a chave da api aberta para qualquer um
+#foi criado um arquivo .env com a chave da api
+API_KEY = os.getenv('API_KEY')
+
 BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
 
 # Conversões pré-definidas

@@ -8,6 +8,7 @@ COPY ./requirements.txt /project_scm/requirements.txt
 
 RUN pip install --no-cache-dir -r /project_scm/requirements.txt
 
+
 COPY . /project_scm 
 
 CMD ["python", "./conversor.py"]
