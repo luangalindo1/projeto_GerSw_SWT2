@@ -10,6 +10,44 @@ Adicionalmente, o processo de desenvolvimento foi gerido por meio de GitHub Proj
 
 Este projeto ofereceu uma oportunidade valiosa para explorar profundamente as práticas de SCM em um ambiente real de desenvolvimento de software, abordando não apenas a codificação, mas principalmente os processos essenciais para garantir a qualidade, rastreabilidade e colaboração contínua ao longo do ciclo de vida do software.
 
+## **2. Balanço Geral das Configurações aplicadas**
+
+### **2.1 Especificações e estratégias**
+
+De forma geral, é possível afirmar que as principais estratégias e especificações apresentadas em sala de aula foram utilizadas, seja de forma integral ou parcial, na construção deste projeto. No início, ocorreram alguns deslizes por parte da equipe, como será descrito nas seções e subseções a seguir. Contudo, eles foram corrigidos, com as estratégias abaixo sendo aplicadas e validadas ao longo dos últimos dias por todos os integrantes.
+
+#### **2.1.1 Estratégia de branching utilizada**
+
+- Inicialmente, foram utilizados nomes arbitrários relacionados às funcionalidades construídas para nossa aplicação;
+- Em seguida, corrigimos essa ineficiência, utilizando a estratégia de [Git Flow](https://www.alura.com.br/artigos/git-flow-o-que-e-como-quando-utilizar)
+  - A partir dessa estratégia, foram adotadas convenções de nomenclatura para cada nova branch e commit criados.
+
+#### **Procedimentos de build e CI/CD**
+
+- Quanto à construção de builds, devido ao fato de o projeto ser em Python e às restrições de tempo, o arquivo executável final é o próprio **"conversor.py"**, que contém uma UI básica na qual o usuário pode acessar as três categorias de conversões propostas para este projeto: conversões de unidades físicas, de moedas e de QR Code.
+- Quanto à CI/CD, foi utilizado o GitHub Actions em paralelo à escrita das funções principais da nosso projeto, relacionada à primeira milestone "Desenvolvimento do código de conversão das 3 categorias";
+- O GitHub actions descrito foi feito ao longo do projeto todo com base no mesmo arquivo "main_CI.yml". Este arquivo contém as configurações de checkout, configuração, instalação de dependências e execução dos testes;
+- Explicações mais detalhadas do CI podem ser encontradas no arquivo ".github/workflows/README_CI.md".
+
+#### **Estrutura e política de testes**
+
+- A estrutura dos arquivos de teste seguiu as recomendações do framework [Pytest] (https://docs.pytest.org/en/stable/) utilizado, estando colocado em uma pasta própria, "./tests";
+- Cada desenvolvedor realizou os testes referentes aos arquivos com as funções que ele próprio desenvolveu, a saber: **"currency_converter.py"**, **"qrcode_converter.py"** e **"und_fisicas.py"**;
+- Os testes abrangem todas as funções colocadas nesses arquivos, que são chamadas por meio dos botões da interface gráfica.
+
+#### **Forma de versionamento adotada (tags, releases)**
+
+Este foi, possivelmente, o aspecto da gerência de configurações que mais deixou o Grupo 3 confuso e indeciso. De forma geral, sabia-se que a release final seria o próprio arquivo em Python, como relatado anteriormente. Por conta disso, não foram criadas muitas tags e releases para o projeto. A primeira tag estava relacionada à primeira versão incompleta, mas já pronta para testes. A segunda será referente à release final, com os principais bugs corrigidos e a UI integrada às funções criadas e lançadas na primeira release.
+
+### **2.2 Gerenciamento de Issues**
+
+O gerenciamento de issues foi outro ponto em que o Grupo 3 apresentou certa confusão no início, mas que foi corrigido e melhorou significativamente com o passar dos dias.  
+
+- Inicialmente, por estarmos em contato constante e acostumados com ferramentas externas como o Trello, acabamos esquecendo de criar as issues referentes às tarefas iniciais.  
+- **Em seguida**, ao percebermos essa falha, criamos issues retroativas com o objetivo de documentar corretamente as branches e commits relacionados às tarefas especificadas.  
+- A partir desse momento, todas as issues passaram a ser criadas antecipadamente, prevendo melhorias e implementações, relatando problemas encontrados e sendo vinculadas ao **GitHub Projects** e às **Milestones**.  
+
+
 ## **3. Lições Aprendidas**
 
 ### **3.1 Lições Aprendidas - Luan**
