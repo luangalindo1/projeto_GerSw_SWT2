@@ -109,6 +109,12 @@ Ao longo do desenvolvimento do projeto, os principais aprendizados giraram em to
 
 Esses conceitos e ferramentas não só melhoraram a qualidade do código, mas também promoveram uma colaboração mais eficaz e transparente entre os membros da equipe. As lições aprendidas nesse processo serão essenciais para projetos futuros, especialmente na construção de sistemas mais complexos, onde o controle de versão e a colaboração em equipe são fundamentais.
 
+### **3.2 Lições Aprendidas - Victor**
+
+
+
+### **3.3 Lições Aprendidas - Paulo César**
+
 
 ### 4. Desafios Enfrentados
 
@@ -122,8 +128,21 @@ Esses conceitos e ferramentas não só melhoraram a qualidade do código, mas ta
 
 ### 6.1 Resultados Obtidos
 
-- Em construção
+É possível afirmar que todos o software *"conversor"*, proposto na última aula da disciplina de gerência, foi, de fato, construído. Além disso, é possível notar, por tudo o que foi exposto acima, que o Grupo 3 enfrentou dificuldades no início, mas acredita ter conseguido superá-las e aplicar de maneira clara todos os conhecimentos adquiridos nas aulas. Elencando alguns dos principais resultados em bullets, temos:
+
+- Um programa em Python, utilizando Tkinter para gerar uma UI Básica, capaz de converter unidades físicas básicas, tipos de moedas a partir da `exchangerate-api` e um conversor/leitor de QR Code.
+- Mais de 10 branches criadas, com mais de 60 commits no total;
+- Mais de 15 Pull Requests discutidas, revisadas e fechadas (aprovadas ou não);
+- Mais de 10 Issues criadas, discutidas, relacionadas ao Github Projects e Milestones e cumpridas;
+- Um Kanban Board (No Github Projects) que orientou a construção do software;
+- 2 Releases;
+- 1 README.md e 1 RELATORIO.md em produção.
   
 ### 6.2 Contribuições da Equipe
 
-- Em construção
+De acordo com as diretrizes do projeto, *"Cada integrante deve assumir ao menos duas funções durante o projeto (importante alternar ao longo do desenvolvimento)"*. Pode-se afirmar categoricamente que esse requisito foi plenamente cumprido, visto que:  
+
+- Todos os integrantes atuaram como **desenvolvedores**, implementando funcionalidades relacionadas a um tipo específico de conversão.  
+- Todos os integrantes atuaram como **testadores**, garantindo uma cobertura mínima de testes para as funcionalidades que cada um criou.  
+- Todos os integrantes desempenharam o papel de **Gerentes de Configuração**, participando da criação, correção e revisão de nomenclaturas, branches, issues, milestones e demais aspectos do gerenciamento.  
+- Luan criou o arquivo `.github/workflows/main_CI.yml`, assumindo a função de **Responsável por Build/CI**, com seu trabalho sendo revisado por Paulo e Victor.
