@@ -53,7 +53,7 @@ def realizar_conversao():
         label_resultado.config(text="Erro na conversão!")
 
 # Função para gerar QR Code
-def generate_new_qr():
+def generate_new_qr(): 
     new_msg = entry_msg_qr.get()
     new_path = entry_save_path_qr.get()
     
@@ -68,7 +68,8 @@ def generate_new_qr():
         qrc.generate_qr_image(new_msg, new_path)
         label_qr_conversion.config(text=f"QR Code gerado em {new_path}")
 
-def read_qr():
+# Conexão da interface com a função de ler QR Code
+def read_qr(): 
     qrcode_path = entry_saved_path_qr.get()
 
     if qrcode_path == "":
@@ -79,6 +80,13 @@ def read_qr():
             label_qr_read.config(text="Arquivo inválido")
         else:
             label_qr_read.config(text=out_msg)
+
+# Copia texto para a área de transferência
+def copy_text(): 
+    texto = label_qr_read.cget("text")  
+    root.clipboard_clear()              
+    root.clipboard_append(texto)       
+    root.update()                       
 
 # Configuração da interface
 root = tk.Tk()
@@ -161,6 +169,9 @@ botao_qr_generate = tk.Button(frame_qrcode, text="Ler QR Code", command=read_qr)
 botao_qr_generate.pack()
 label_qr_read = tk.Label(frame_qrcode, text="")
 label_qr_read.pack()
+
+button_copy_qr = tk.Button(frame_qrcode, text="Copiar", command=copy_text)
+button_copy_qr.pack()
 
 # -> GUI da aba de Conversão de Moedas <-
 
