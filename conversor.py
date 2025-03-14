@@ -91,7 +91,7 @@ def copy_text():
 # Configuração da interface
 root = tk.Tk()
 root.title("Conversor de unidades, Moedas e QR Code")
-root.geometry("400x400")
+root.geometry("500x500")
 
 # Definição de páginas para cada tipo de conversão
 customNotebook = ttk.Notebook(root)
