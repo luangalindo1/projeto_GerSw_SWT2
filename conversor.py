@@ -88,6 +88,19 @@ def copy_text():
     root.clipboard_append(texto)       
     root.update()                       
 
+# Função para processar a conversão de moedas
+def realizar_conversao_moeda():
+    opcao = combo_moeda.get()
+    valor = float(entry_valor_moeda.get())
+    taxas = cc.obter_taxas_cambio()
+    if not taxas:
+        label_resultado_moeda.config(text="Erro ao obter taxas de câmbio.")
+        return
+
+    moeda_origem, moeda_destino = cc.CONVERSOES[int(opcao.split('.')[0])]
+    valor_convertido = cc.converter_moeda(valor, moeda_origem, moeda_destino, taxas)
+    label_resultado_moeda.config(text=f"Resultado: {valor_convertido:.2f} {moeda_destino}")
+
 # Configuração da interface
 root = tk.Tk()
 root.title("Conversor de unidades, Moedas e QR Code")
@@ -97,8 +110,10 @@ root.geometry("500x500")
 customNotebook = ttk.Notebook(root)
 frame_units = ttk.Frame(customNotebook)
 frame_qrcode = ttk.Frame(customNotebook)
+frame_moeda = ttk.Frame(customNotebook)
 customNotebook.add(frame_units, text="Conversão")
 customNotebook.add(frame_qrcode, text="QR Code")
+customNotebook.add(frame_moeda, text="Moedas")
 customNotebook.pack(expand=True, fill="both")
 
 # Label de título
@@ -125,7 +140,6 @@ tipos_de_conversao = [
     "m/s para mi/h", "mi/h para m/s", "km/h para m/s", "m/s para km/h",
     "km/h para mi/h", "mi/h para km/h"
 ]
-
 
 combo_conversao = ttk.Combobox(frame_units, values=tipos_de_conversao, state="readonly", justify="center")
 combo_conversao.pack(pady=5)
@@ -174,6 +188,35 @@ button_copy_qr = tk.Button(frame_qrcode, text="Copiar", command=copy_text)
 button_copy_qr.pack()
 
 # -> GUI da aba de Conversão de Moedas <-
+label_moeda_titulo = tk.Label(frame_moeda, text="Conversão de Moedas", font=("Arial", 14))
+label_moeda_titulo.pack(pady=10)
+
+# Combobox para selecionar a conversão de moedas
+label_moeda = tk.Label(frame_moeda, text="Tipo de Conversão:", width=30)
+label_moeda.pack(pady=5)
+
+tipos_de_moeda = [
+    "1. BRL para USD", "2. USD para BRL", "3. USD para EUR",
+    "4. EUR para USD", "5. BRL para EUR", "6. EUR para BRL"
+]
+
+combo_moeda = ttk.Combobox(frame_moeda, values=tipos_de_moeda, state="readonly", justify="center")
+combo_moeda.pack(pady=5)
+
+# Entrada para valor
+label_valor_moeda = tk.Label(frame_moeda, text="Valor:")
+label_valor_moeda.pack(pady=5)
+
+entry_valor_moeda = tk.Entry(frame_moeda)
+entry_valor_moeda.pack(pady=5)
+
+# Botão para realizar a conversão de moedas
+botao_convert_moeda = tk.Button(frame_moeda, text="Converter", command=realizar_conversao_moeda)
+botao_convert_moeda.pack(pady=20)
+
+# Label para exibir o resultado da conversão de moedas
+label_resultado_moeda = tk.Label(frame_moeda, text="Resultado: ", font=("Arial", 12))
+label_resultado_moeda.pack(pady=10)
 
 # Inicia a interface
 root.mainloop()

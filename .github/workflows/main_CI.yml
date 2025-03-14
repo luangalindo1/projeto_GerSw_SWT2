@@ -29,13 +29,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Instala as dependências do arquivo requirements.txt
 
-    # Passo 4: Rodar os testes
+    # Passo 4: Definir variáveis de ambiente
+    - name: Set environment variables
+      run: echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+
+    # Passo 5: Rodar os testes
     - name: Run tests
       run: |
         pytest -v # Ou qualquer outro framework de testes
                   # a flag -v é para exibição de resultados mais detalhados
 
-    # Passo 5: (Opcional) Verificar estilo de código com flake8
+    # Passo 6: (Opcional) Verificar estilo de código com flake8
     #- name: Lint with flake8
     #  run: |
     #    pip install flake8

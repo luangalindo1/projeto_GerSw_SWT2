@@ -11,7 +11,7 @@ load_dotenv()
 #foi criado um arquivo .env com a chave da api
 API_KEY = os.getenv('API_KEY')
 
-# Chave da ABASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
+BASE_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
 
 # Conversões pré-definidas
 CONVERSOES = {
