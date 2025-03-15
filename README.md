@@ -62,6 +62,18 @@ Funções para conversão de unidades de velocidade:
 
 # Parte 2: Conversor de Moedas
 
+Este projeto também contém um conversor de moedas que utiliza uma API para obter as taxas de câmbio atualizadas. As funções fornecem conversões diretas entre diferentes moedas, permitindo que você converta facilmente valores de uma moeda para outra. Para obter as taxas de câmbio atualizadas, este projeto utiliza a API da ExchangeRate-API. A chave da API é armazenada em um arquivo .env para garantir a segurança e evitar a exposição da chave no código-fonte, e deve ser copiado para mesma pasta raiz deste projeto.
+
+### 1. **Conversões Disponíveis**
+As seguintes conversões de moedas estão disponíveis:
+
+- **`1. BRL para USD`**: Real Brasileiro para Dólar Americano
+- **`2. USD para BRL`**: Dólar Americano para Real Brasileiro
+- **`3. USD para EUR`**: Dólar Americano para Euro
+- **`4. EUR para USD`**: Euro para Dólar Americano
+- **`5. BRL para EUR`**: Real Brasileiro para Euro
+- **`6. EUR para BRL`**: Euro para Real Brasileiro
+
 
 # Parte 3: Leitor de QR Code
 
