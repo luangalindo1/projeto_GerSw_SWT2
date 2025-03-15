@@ -75,12 +75,49 @@ As seguintes conversões de moedas estão disponíveis:
 - **`6. EUR para BRL`**: Euro para Real Brasileiro
 
 
-# Parte 3: Leitor de QR Code
+# Parte 3: Leitor e Conversor de QR Code
 
-## Como rodar
+Esta parte do software, por sua vez, tem como objetivo ser um conversor geral de QR Code, sendo capaz de converter uma mensagem ou link para um código novo em formato .PNG, ou então de ler um QR Code em um arquivo a partir da biblioteca `opencv`. Uma limitação atual dessa versão do software é que o QR Code convertido de uma mensagem é sempre salvo na pasta local onde o repositório se encontra.
+
+Funções:
+- **`generate_qr_image(txt, out_file="my_qrcode.png")`**: Gera uma imagem QR a partir da string `txt` e do caminho `out_file`;
+- **`read_qr_image(file_name)`**: Lê o QR Code de um arquivo em imagem especificado pelo caminho `file_name`;
+
+# Como rodar
+
+### Pré-Requisitos
+- Python 3.10 ou mais recente instalado;
+- Chave própria da [exchangerate-api](https://www.exchangerate-api.com/);
+- Caso esteja executando em Windows 10 ou 11, algum X Server, como o [VcXsrv](https://vcxsrv.com/).
+
+### Instruções Gerais
 1. Clone este repositório: `git clone https://github.com/luangalindo1/projeto_GerSw_SWT2`
-2. Instale as dependências: `pip install -r requirements.txt`
-3. Execute o código: `python conversor.py`
+2. Crie no diretório do repositório um arquivo `.env` e coloque sua chave da exchangerate-api, seguindo a seguinte sintaxe: API_KEY="[YOUR-API-KEY]"
+3. Instale as dependências: `pip install -r requirements.txt`
+4. Execute o código: `python conversor.py`
+
+## Instruções do Dockerfile
+1. No diretório, construa a imagem Docker: `docker build -t img_conversor .`
+2. Verifique se a imagem foi criada: `docker images`
+3. Rode o contêiner: `docker run -e DISPLAY=host.docker.internal:0 --name conteiner_conversor -d img_conversor`
+    1. Se estiver no Windows, tenha certeza que está no powershell e previamente tenha inserido o comando `$env:DISPLAY="host.docker.internal:0"`
+4. Verifique os logs do contêiner: `docker logs conteiner_conversor`
+5. Execute o contêiner para interagir: `docker exec -it conteiner_conversor bash`
+6. Pare a execução quando desejar: `docker stop conteiner_conversor`
+7. Remova o contêiner (opcional): `docker rm conteiner_conversor`
+
+### Atenção!
+- Por conta da necessidade de interface gráfica, não é recomendável a utilização do Docker Desktop para execução deste software. É necessário utilizar linha de comando para que um display adequado possa ser configurado. 
+
+## Link para a Imagem do Container no Docker Hub:
+- https://hub.docker.com/repository/docker/pcgomesp/conversor-tk-gui/general
+
+## Exemplo de execução com Docker e VcXsrv no Windows 10:
+No powershell, tendo feito o Git clone posto acima, criado seu próprio arquivo .env e estando com ambos Python e Dockers instalados, insira os seguintes comandos:
+
+1. $env:DISPLAY="host.docker.internal:0"
+2. docker build -t conversor-tk-gui .
+3. docker run --rm -it -e DISPLAY=host.docker.internal:0 conversor-tk-gui
 
 ## Licença
 
