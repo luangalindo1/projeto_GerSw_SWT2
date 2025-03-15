@@ -1,6 +1,6 @@
 ﻿# Projeto - Conversor de Unidades, Moedas e Leitor de QR Code
 
-Este é um projeto simples de um conversor de unidades, um conversor cambial e um leitor de código QR, desenvolvido em Python. O objetivo é aplicar de forma integrada os conceitos, práticas e ferramentas de Gerência de Configuração de Software (SCM) no desenvolvimento de uma aplicação simples. Para mais detalhes, ver `projeto_enunciado.md`.
+Este é um projeto simples de um conversor de unidades, um conversor cambial e um leitor de código QR, desenvolvido em Python. O objetivo é aplicar de forma integrada os conceitos, práticas e ferramentas de Gerência de Configuração de Software (SCM) no desenvolvimento de uma aplicação simples. Para mais detalhes, ver `projeto_enunciado.md` e `RELATÓRIO.md`.
 
 ## Autores:
 
