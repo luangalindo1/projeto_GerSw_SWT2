@@ -111,7 +111,17 @@ Esses conceitos e ferramentas não só melhoraram a qualidade do código, mas ta
 
 ### **3.2 Lições Aprendidas - Victor**
 
+Inicialmente, o maior ponto que deveria destacar é a minha inexperiência com ferramentas de gerência, em especial o Git e o Github, onde os comandos eram sempre um grande desafio, tinha sempre que ficar lembrando comandos específicos, quando não faziam parte do "padrão" (git init, git clone, git status, git commit, git push), embora saiba que esses comandos básicos já cobrem boa parte dos comandos mais usados, me faltava um pouco mais de desenvoltura para isso, pois para o correto desenvolvimento do trabalho, eram necessários outros comandos mais robustos, e esse trabalho foi uma boa oportunidade para poder conhecer mais sobre eles, poder testar na prática e por fim me sentir confiante no uso destes comandos.
 
+Outro ponto relevante, que mereça estar aqui relatado, foi a parte do gerenciamento de tarefas dentro do Github Projects, mas com a questão que tem diversos tópicos ligados aos conteúdos do Github, como tags, menções aos PRs, issues etc, isso é muito interessante, e diferente, mas que ajudam muito nas tarefas e no desenvolvimento do projeto, ainda mais para equipes maiores e com diversas atividades, commits, features e issues para resolver, e dentro do Projects, é concentrado tudo isso dentro do repositório, sem a necessidade de ter que fazer esse gerenciamento de atividades em outros sistemas, como Trello ou Jira, isso é um ponto muito positivo para equipes em grandes projetos, facilitando esse "trackeamento" de tarefas e minimização de erros por ter que sempre estar registrando em outras plataformas.
+
+Um dos aprendizados mais significativos para mim foi a utilização do GitHub Actions para automação de testes e integração contínua (CI). No início, configurar o GitHub Actions foi um desafio, especialmente porque nunca havia trabalhado com pipelines de CI antes. Aprendi a criar um workflow básico para executar testes automatizados a cada push ou pull request, garantindo que o código fosse validado antes de ser mesclado na branch principal. Essa automação não só acelerou o processo de desenvolvimento, mas também aumentou a confiança na qualidade do código, já que erros eram detectados rapidamente. 
+
+Um erro que cometi e que serviu como uma grande lição: deixei a API Key do conversor de moedas exposta no código-fonte. Isso foi um problema grave, pois comprometia a segurança do projeto. Após perceber o erro, pesquisei sobre como proteger informações sensíveis e utilizei o GitHub Secrets, o que foi uma boa solução, pois estava tudo dentro do Github e o Actions precisava disso para fazer a parte de testes. Aprendi a armazenar a API Key como um segredo no repositório e a acessá-la no código por meio de variáveis de ambiente. Essa solução não apenas resolveu o problema de segurança, mas também me mostrou o poder do GitHub em oferecer ferramentas robustas para gerenciar informações sensíveis de forma segura.
+
+Além disso, a experiência com testes automatizados foi fundamental para entender a importância de garantir a qualidade do código. Utilizando o framework Pytest, pude criar testes unitários para as funcionalidades que desenvolvi, como a conversão de moedas, onde precisava testar alguns aspectos das suas funções. A integração desses testes com o GitHub Actions permitiu que eles fossem executados automaticamente a cada alteração no código, garantindo que novas implementações não quebrassem funcionalidades existentes. Essa prática foi essencial para manter a estabilidade do projeto, onde faz pensar que para uma equipe composta por 3 integrantes, já é de grande ajuda, quando se aumenta para grandes equipes, é realmente de grande ajuda o Actions para automatizar essa parte.
+
+Como lição aprendida maior, não somente pelo projeto, mas a matéria como um todo: pude  entender como o GitHub é uma plataforma completa para desenvolvimento colaborativo. Desde o versionamento de código com Git até a automação de processos com GitHub Actions, todas as ferramentas estão integradas e são fáceis de usar quando bem compreendidas. Aprendi que, com um pouco de estudo e prática, é possível dominar essas ferramentas e utilizá-las para melhorar a eficiência e a qualidade do trabalho em equipe.
 
 ### **3.3 Lições Aprendidas - Paulo César**
 
@@ -123,13 +133,42 @@ Contudo, esse aspecto, que considero minha maior falha, também representa o pon
 
 Por fim, também reconheço que este projeto teve suas limitações, principalmente devido às restrições de tempo e às outras obrigações da Residência Tecnológica. No que diz respeito à minha parte, algumas melhorias que poderiam ter sido implementadas incluem a adição de novas funções para personalizar QR Codes, como alterar cores, adicionar imagens de fundo e permitir a escolha do caminho de salvamento, já que, atualmente, os arquivos são salvos apenas no diretório local onde o `conversor.py` está. Além disso, uma interface gráfica mais robusta teria sido vantajosa, não apenas para melhorar a estética do projeto, mas também para viabilizar testes de integração entre a UI e as funções previamente validadas nos testes unitários.
 
-### 4. Desafios Enfrentados
+## 4. Desafios Enfrentados
 
-- Em construção
+Durante o desenvolvimento do projeto, a equipe enfrentou diversos desafios que, embora tenham sido superados, serviram de reflexão e demandou um certo foco a mais, além da organização do projeto. Foram elencados os principais desafios identificados, são eles:
 
-### 5. Melhorias e Ajustes
+### 4.1 Inexperiência com Ferramentas de SCM
+No início do projeto, a equipe demonstrou dificuldades em utilizar corretamente as ferramentas de SCM, como Git, GitHub Projects e GitHub Actions. Isso resultou em práticas inadequadas, como a falta de issues no início do projeto e a criação de branches com **nomes arbitrários**. A equipe realizou pesquisas e consultas para entender melhor as práticas recomendadas, como o uso de Git Flow, a criação de issues antecipadas e a configuração de pipelines de CI com GitHub Actions. A correção dessas práticas foi feita ao longo do projeto, resultando em um fluxo de trabalho mais organizado.
 
-- Em construção
+### 4.2 Dificuldades com Integração Contínua (CI)
+Configurar o GitHub Actions para executar testes automatizados foi desafiador, especialmente para membros que nunca haviam trabalhado com CI antes. Erros frequentes nos pipelines atrasaram o desenvolvimento inicial, além de problemas com as keys sendo mostradas publicamente nos arquivos.
+A solução para esse desafio foi a equipe dedicar tempo para estudar a documentação do GitHub Actions e realizar testes iterativos até que o pipeline funcionasse corretamente. A automação dos testes trouxe benefícios significativos, como a detecção precoce de erros, assim como a automação para esses testes a todo novo PR feito na branch main do repositório.
+
+### 4.3 Versionamento e Releases
+Houve dificuldades em definir critérios claros para o versionamento do projeto, resultando em poucas tags e releases. Após discussões, a equipe estabeleceu critérios para criar tags e releases, como a conclusão de funcionalidades principais e a correção de bugs críticos. Isso permitiu um controle mais eficiente das versões do projeto.
+
+### 4.4 Testes Automatizados
+A implementação de testes automatizados foi um processo lento, especialmente devido à falta de experiência com o framework Pytest. A equipe realizou pesquisas e testes iterativos para garantir que todas as funcionalidades fossem cobertas por testes unitários. A automação dos testes via CI garantiu que erros fossem detectados rapidamente, e feitos de forma automática, em conjunto do **Github Actions**
+
+## **5. Melhorias e Ajustes**
+
+Baseado nos desafios enfrentados e nas lições aprendidas, foram identificados vários pontos de melhorias que podem ser implementados em futuros projetos, onde haja o uso de ferramentas de **Gerencias de Configuração**, os pontos são os seguintes:
+
+### 5.1  Definição Antecipada de Práticas de SCM
+- Estabelecer desde o início as práticas de SCM, como estratégias de branching, convenções de commit e políticas de versionamento. 
+**Benefício:** Evitará a necessidade de correções no meio do projeto e garantirá um fluxo de trabalho mais organizado.
+
+### 5.2 Uso de Ferramentas de Comunicação Integradas
+- Utilizar ferramentas de comunicação integradas ao GitHub, como discussões ou projetos, em vez de depender de aplicativos externos como WhatsApp. 
+**Benefício**: Melhorará a rastreabilidade das decisões e tarefas, além de centralizar todas as informações no GitHub.
+
+### 5.3 Expansão dos Testes Automatizados
+- Implementar testes de integração e testes de UI para garantir uma cobertura mais abrangente.
+**Benefício**: Aumentará a confiabilidade do software e reduzirá a probabilidade de erros em produção.
+
+### 5.4 Documentação Detalhada
+- Criar uma documentação mais detalhada, incluindo tutoriais para configuração do ambiente, execução de testes e deploy.
+**Benefício**: Facilitará a colaboração de novos membros e a manutenção do projeto.
 
 ## **6. Conclusão**
 
@@ -153,3 +192,6 @@ De acordo com as diretrizes do projeto, *"Cada integrante deve assumir ao menos 
 - Todos os integrantes atuaram como **testadores**, garantindo uma cobertura mínima de testes para as funcionalidades que cada um criou.  
 - Todos os integrantes desempenharam o papel de **Gerentes de Configuração**, participando da criação, correção e revisão de nomenclaturas, branches, issues, milestones e demais aspectos do gerenciamento.  
 - Luan criou o arquivo `.github/workflows/main_CI.yml`, assumindo a função de **Responsável por Build/CI**, com seu trabalho sendo revisado por Paulo e Victor.
+
+### 6.3 Considerações finais
+O projeto foi uma boa oportunidade para a equipe aplicar os conceitos de SCM em um ambiente real de desenvolvimento. Apesar dos desafios enfrentados, a equipe demonstrou capacidade de aprendizado e adaptação, resultando em um projeto bem-sucedido. As lições aprendidas serão fundamentais para projetos futuros, especialmente no que diz respeito à organização, automação e colaboração em equipe.
