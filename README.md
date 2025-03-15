@@ -63,7 +63,13 @@ Funções para conversão de unidades de velocidade:
 # Parte 2: Conversor de Moedas
 
 
-# Parte 3: Leitor de QR Code
+# Parte 3: Leitor e Conversor de QR Code
+
+Esta parte do software, por sua vez, tem como objetivo ser um conversor geral de QR Code, sendo capaz de converter uma mensagem ou link para um código novo em formato .PNG, ou então de ler um QR Code em um arquivo a partir da biblioteca `opencv`. Uma limitação atual dessa versão do software é que o QR Code convertido de uma mensagem é sempre salvo na pasta local onde o repositório se encontra.
+
+Funções:
+- **`generate_qr_image(txt, out_file="my_qrcode.png")`**: Gera uma imagem QR a partir da string `txt` e do caminho `out_file`;
+- **`read_qr_image(file_name)`**: Lê o QR Code de um arquivo em imagem especificado pelo caminho `file_name`;
 
 # Como rodar
 
