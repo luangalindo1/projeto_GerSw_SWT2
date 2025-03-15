@@ -37,7 +37,7 @@ De forma geral, é possível afirmar que as principais estratégias e especifica
 
 #### **Forma de versionamento adotada (tags, releases)**
 
-Este foi, possivelmente, o aspecto da gerência de configurações que mais deixou o Grupo 3 confuso e indeciso. De forma geral, sabia-se que a release final seria o próprio arquivo em Python, como relatado anteriormente. Por conta disso, não foram criadas muitas tags e releases para o projeto. A primeira tag estava relacionada à primeira versão incompleta, mas já pronta para testes. A segunda será referente à release final, com os principais bugs corrigidos e a UI integrada às funções criadas e lançadas na primeira release.
+Este foi, possivelmente, o aspecto da gerência de configurações que mais deixou o Grupo 3 confuso e indeciso. De forma geral, sabia-se que a release final seria o próprio arquivo em Python, como relatado anteriormente. Por conta disso, não foram criadas muitas tags e releases para ao longo do desenvolvimento do projeto, sendo um ponto trabalhado já "nos finalmentes". As tags foram escritas de acordo com a possibilidade de execução do arquivo principal, variando de `unusable` até `first_release`.
 
 ### **2.2 Gerenciamento de Issues**
 
@@ -142,7 +142,7 @@ Por fim, também reconheço que este projeto teve suas limitações, principalme
 - Mais de 15 Pull Requests discutidas, revisadas e fechadas (aprovadas ou não);
 - Mais de 10 Issues criadas, discutidas, relacionadas ao Github Projects e Milestones e cumpridas;
 - Um Kanban Board (No Github Projects) que orientou a construção do software;
-- 2 Releases;
+- Mais de 5 Releases (apesar da maioria não ser plenamente utilizável);
 - 1 README.md e 1 RELATORIO.md em produção.
   
 ### 6.2 Contribuições da Equipe
