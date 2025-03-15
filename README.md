@@ -70,6 +70,15 @@ Funções para conversão de unidades de velocidade:
 2. Instale as dependências: `pip install -r requirements.txt`
 3. Execute o código: `python conversor.py`
 
+## Instruções do Dockerfile
+1. No diretório, construa a imagem Docker: `docker build -t img_conversor .`
+2. Verifique se a imagem foi criada: `docker images`
+3. Rode o contêiner: `docker run -e DISPLAY=host.docker.internal:0 --name conteiner_conversor -d img_conversor` (**RESOLVER DISPLAY**)
+4. Verifique os logs do contêiner: `docker logs conteiner_conversor`
+5. Execute o contêiner para interagir: `docker exec -it conteiner_conversor bash`
+6. Pare a execução quando desejar: `docker stop conteiner_conversor`
+7. Remova o contêiner (opcional): `docker rm conteiner_conversor`
+
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
