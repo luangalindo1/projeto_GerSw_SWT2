@@ -65,19 +65,41 @@ Funções para conversão de unidades de velocidade:
 
 # Parte 3: Leitor de QR Code
 
-## Como rodar
+# Como rodar
+
+### Pré-Requisitos
+- Python 3.10 ou mais recente instalado;
+- Chave própria da [exchangerate-api](https://www.exchangerate-api.com/);
+- Caso esteja executando em Windows 10 ou 11, algum X Server, como o [VcXsrv](https://vcxsrv.com/).
+
+### Instruções Gerais
 1. Clone este repositório: `git clone https://github.com/luangalindo1/projeto_GerSw_SWT2`
-2. Instale as dependências: `pip install -r requirements.txt`
-3. Execute o código: `python conversor.py`
+2. Crie no diretório do repositório um arquivo `.env` e coloque sua chave da exchangerate-api, seguindo a seguinte sintaxe: API_KEY="[YOUR-API-KEY]"
+3. Instale as dependências: `pip install -r requirements.txt`
+4. Execute o código: `python conversor.py`
 
 ## Instruções do Dockerfile
 1. No diretório, construa a imagem Docker: `docker build -t img_conversor .`
 2. Verifique se a imagem foi criada: `docker images`
-3. Rode o contêiner: `docker run -e DISPLAY=host.docker.internal:0 --name conteiner_conversor -d img_conversor` (**RESOLVER DISPLAY**)
+3. Rode o contêiner: `docker run -e DISPLAY=host.docker.internal:0 --name conteiner_conversor -d img_conversor`
+    1. Se estiver no Windows, tenha certeza que está no powershell e previamente tenha inserido o comando `$env:DISPLAY="host.docker.internal:0"`
 4. Verifique os logs do contêiner: `docker logs conteiner_conversor`
 5. Execute o contêiner para interagir: `docker exec -it conteiner_conversor bash`
 6. Pare a execução quando desejar: `docker stop conteiner_conversor`
 7. Remova o contêiner (opcional): `docker rm conteiner_conversor`
+
+### Atenção!
+- Por conta da necessidade de interface gráfica, não é recomendável a utilização do Docker Desktop para execução deste software. É necessário utilizar linha de comando para que um display adequado possa ser configurado. 
+
+## Link para a Imagem do Container no Docker Hub:
+- https://hub.docker.com/repository/docker/pcgomesp/conversor-tk-gui/general
+
+## Exemplo de execução com Docker e VcXsrv no Windows 10:
+No powershell, tendo feito o Git clone posto acima, criado seu próprio arquivo .env e estando com ambos Python e Dockers instalados, insira os seguintes comandos:
+
+1. $env:DISPLAY="host.docker.internal:0"
+2. docker build -t conversor-tk-gui .
+3. docker run --rm -it -e DISPLAY=host.docker.internal:0 conversor-tk-gui
 
 ## Licença
 
