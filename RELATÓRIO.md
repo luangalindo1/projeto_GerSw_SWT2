@@ -109,7 +109,7 @@ Ao longo do desenvolvimento do projeto, os principais aprendizados giraram em to
 
 Esses conceitos e ferramentas não só melhoraram a qualidade do código, mas também promoveram uma colaboração mais eficaz e transparente entre os membros da equipe. As lições aprendidas nesse processo serão essenciais para projetos futuros, especialmente na construção de sistemas mais complexos, onde o controle de versão e a colaboração em equipe são fundamentais.
 
-### **3.2 Lições Aprendidas - Victor**
+### **3.2 Lições Aprendidas - Victor Augusto**
 
 Inicialmente, o maior ponto que deveria destacar é a minha inexperiência com ferramentas de gerência, em especial o Git e o Github, onde os comandos eram sempre um grande desafio, tinha sempre que ficar lembrando comandos específicos, quando não faziam parte do "padrão" (git init, git clone, git status, git commit, git push), embora saiba que esses comandos básicos já cobrem boa parte dos comandos mais usados, me faltava um pouco mais de desenvoltura para isso, pois para o correto desenvolvimento do trabalho, eram necessários outros comandos mais robustos, e esse trabalho foi uma boa oportunidade para poder conhecer mais sobre eles, poder testar na prática e por fim me sentir confiante no uso destes comandos.
 
